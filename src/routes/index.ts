@@ -4,6 +4,7 @@ import loginRouter from "./login";
 import addRouter from "./add";
 import redirectRouter from "./redirect";
 import linksRouter from "./links"
+import deleteLinksRouter from "./deleteLink"
 
 const router = Router();
 
@@ -12,5 +13,6 @@ router.use("/api", loginRouter);
 router.use("/api", registerRouter);
 router.use("/api", addRouter);
 router.use("/api", linksRouter);
+router.use("/api", deleteLinksRouter);
 
 export default router;
