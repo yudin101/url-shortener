@@ -1,6 +1,13 @@
+import fs from "fs";
+import path from "path";
 import Database from "better-sqlite3";
 
-const db = new Database("urlShortenerDB.sqlite");
+const dbDir = path.resolve("db");
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir);
+}
+
+const db = new Database("./db/urlShortenerDB.sqlite");
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
